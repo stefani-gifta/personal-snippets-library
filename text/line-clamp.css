@@ -1,0 +1,18 @@
+/* ==========================================================================
+   @name    Multi-line ellipsis (line clamp)
+   @type    text
+   @tags    text, ellipsis, truncate, line-clamp, overflow
+   @desc    Truncates text to N lines with "..."
+   @needs   none
+   @vars    --lines (4)
+   @usage   <p class="line-clamp" style="--lines: 3">Long text...</p>
+   @source  original
+   ========================================================================== */
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lines, 4); /* max number of lines */
+  line-clamp: var(--lines, 4);
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* required for the clamp to take effect */
+}

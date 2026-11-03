@@ -1,0 +1,12 @@
+/* ==========================================================================
+   @name    Human-readable name
+   @type    animation | effect | component | text
+   @tags    lowercase, comma, separated
+   @desc    One line: what it does and the visual result
+   @needs   keyframes / variables / JS / HTML it depends on, or "none"
+   @vars    --custom-props you can override (with defaults), or "none"
+   @usage   Minimal HTML or how to apply it
+   @source  URL or "original"
+   ========================================================================== */
+
+/* snippet goes here */

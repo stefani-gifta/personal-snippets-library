@@ -1,0 +1,42 @@
+/* ==========================================================================
+   @name    Jumping object + shadow
+   @type    animation
+   @tags    keyframes, jump, bounce, squash, stretch, shadow, loop
+   @desc    Object squashes, jumps, and lands; its ground shadow shrinks and fades in sync
+   @needs   none (keyframes + helper classes in this file)
+   @vars    --jump-duration (1s)
+   @usage   <div class="jumping-wrap">
+              <div class="jumping"></div>
+              <div class="jumping-shadow"></div>
+            </div>
+   @source  original
+   ========================================================================== */
+
+@keyframes objectJumping {
+  0%   { transform: translateY(0) scaleY(1); }
+  10%  { transform: translateY(0) scaleY(0.9); }     /* squash before jump */
+  30%  { transform: translateY(-10px) scaleY(1.05); } /* peak of jump */
+  50%  { transform: translateY(-20px) scaleY(1); }
+  70%  { transform: translateY(-10px) scaleY(1.05); }
+  90%  { transform: translateY(0) scaleY(0.95); }     /* squash on landing */
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes shadowJumping {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  10%      { transform: scaleX(1.2); opacity: 0.95; }
+  30%      { transform: scaleX(0.8); opacity: 0.6; }
+  50%      { transform: scaleX(0.6); opacity: 0.4; }
+  70%      { transform: scaleX(0.8); opacity: 0.6; }
+  90%      { transform: scaleX(1.1); opacity: 0.9; }
+}
+
+/* helper classes (added so the snippet works standalone) */
+.jumping {
+  transform-origin: bottom center;
+  animation: objectJumping var(--jump-duration, 1s) ease-in-out infinite;
+}
+
+.jumping-shadow {
+  animation: shadowJumping var(--jump-duration, 1s) ease-in-out infinite;
+}

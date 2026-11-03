@@ -1,0 +1,36 @@
+/* ==========================================================================
+   @name    Retro button
+   @type    component
+   @tags    button, hard-shadow, retro, hover, active, press, neo-brutalism
+   @desc    Hard-offset shadow that shrinks on hover and flattens on click
+   @needs   keyframes: welcome-in (defined below)
+   @vars    --retro-offset (5px), --retro-shadow-color (black)
+   @usage   <button class="btn-retro">Click</button>
+   @source  original
+   ========================================================================== */
+
+.btn-retro {
+  --o: var(--retro-offset, 5px);
+  --c: var(--retro-shadow-color, black);
+  animation: welcome-in 0.5s ease-in-out;
+  background: none;
+  font-size: 1em;
+  padding: 7px;
+  box-shadow: var(--o) var(--o) 0 1px var(--c);
+  transition: 0.2s;
+}
+
+.btn-retro:hover {
+  box-shadow: calc(var(--o) - 2px) calc(var(--o) - 2px) 0 1px var(--c);
+  transform: translate(2px, 2px);
+}
+
+.btn-retro:active {
+  box-shadow: none;
+  transform: translate(var(--o), var(--o));
+}
+
+@keyframes welcome-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

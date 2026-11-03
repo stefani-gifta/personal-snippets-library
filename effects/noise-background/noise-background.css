@@ -1,0 +1,19 @@
+/* ==========================================================================
+   @name    Noise / grain background
+   @type    effect
+   @tags    background, noise, grain, svg, feTurbulence, fixed, overlay
+   @desc    Full-screen fixed grain overlay behind page content
+   @needs   noise-background.js (injects the SVG into <body>)
+   @vars    none
+   @usage   Load this CSS + noise-background.js; no markup needed
+   @source  https://grainy-gradients.vercel.app/
+   ========================================================================== */
+
+#noise {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
